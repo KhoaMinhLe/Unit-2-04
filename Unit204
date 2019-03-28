@@ -1,0 +1,52 @@
+//Created by: Khoa
+
+import java.util.ArrayList;
+
+public class Unit204 {
+	
+	private ArrayList stackA;
+	
+	public Unit204() {
+		
+		stackA = new ArrayList();
+		
+	}
+	
+	public void push(int number) {
+		
+		stackA.add(number);
+		
+	}
+	
+	public int pop() {
+		
+		int returnValue = (int)stackA.get(stackA.size()-1);
+		stackA.remove(stackA.size()-1);
+		return returnValue;
+		
+	}
+	
+	public void printStack() {
+		
+		if (stackA.isEmpty())
+			System.out.println("List is empty.");
+		else
+			System.out.println("Here is the list you created: " + stackA);
+		
+	}
+	
+	public void peek() {
+		System.out.println("The top number is " + stackA.get(stackA.size()-1));
+		
+	}
+	
+	public void clear() {
+		stackA.clear();
+		System.out.println("Clearing...");
+		System.out.println("The list is clear. There are " + stackA.size() + " numbers.");
+	}
+	
+	public int size() {
+		return stackA.size();
+	}	
+}
