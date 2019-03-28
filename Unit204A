@@ -1,0 +1,40 @@
+//Created by: Khoa
+
+import java.util.Scanner;
+
+public class Unit204A {
+
+	public static void main(String[] args) {
+		
+		Unit204 stackB = new Unit204();
+		Scanner userInput = new Scanner(System.in);
+		int number = 0;
+		
+		do {
+			try {
+				System.out.print("Please enter a number to add to the list. When you're finished entering all your numbers, enter 0 ");
+				number = userInput.nextInt();
+				if (number > 0)
+					stackB.push(number);
+					stackB.peek();
+			}
+			
+			catch(Exception e) {
+				System.out.println("Invalid input. Enter a number.");
+			}
+		}
+		
+		while (number != 0);
+		stackB.printStack();
+		userInput.close();
+		
+		if (stackB.size() > 0) {
+			while (stackB.size() > 0) {
+				stackB.pop();
+				System.out.println("Popping... ");
+				stackB.printStack();
+			}
+		}
+		stackB.clear();
+	}
+}
